@@ -1,0 +1,18 @@
+applications:
+- name: keycloak
+  instances: 1
+  disk_quota: 2G
+  memory: 512M
+  docker:
+    image: saisunil1118/keycloak
+  services:
+   - postgres-keycloak-database 
+  env:
+    PROXY_ADDRESS_FORWARDING: true
+    POSTGRES_ADDR: cg-aws-broker-prodgflmly8f3w0x60d.ci7nkegdizyy.us-gov-west-1.rds.amazonaws.com
+    POSTGRES_PORT: 5432
+    POSTGRES_DATABASE: cgawsbrokerprodgflmly8f3w0x60d
+    POSTGRES_USER: u96d71jhf54hrhq1
+    POSTGRES_PASSWORD: 53z1unlr9dlez2nco3ke94ibk
+    KEYCLOAK_USER: admin
+    KEYCLOAK_PASSWORD: admin
